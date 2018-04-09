@@ -1,0 +1,36 @@
+{
+    "eslint.enable": true,
+
+        "workbench.iconTheme": "vscode-icons",
+        "extensions.ignoreRecommendations": true,
+        "vsicons.projectDetection.autoReload": true,
+        "window.zoomLevel": 0,
+        "jshint.options": { "esversion": 6 },
+        "typescript.autoImportSuggestions.enabled":false,
+        "editor.acceptSuggestionOnCommitCharacter": false,
+        "editor.fontFamily": "Fira Code",
+        "editor.fontLigatures": true,
+        "editor.fontSize": 14,
+        "javascript.validate.enable": false,
+        "javascript.implicitProjectConfig.experimentalDecorators": true,
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/*.css.map": true,
+            "**/*.css": true,
+            ".sass-cache": true,
+            ".vscode": true,
+            "config": true,
+            "scripts" : true,
+            "node_modules" : true,
+            ".eslintrc.json" : true,
+            ".gitignore" : true,
+            "build" : true,
+            "package-lock.json" : true,
+            "yarn.lock" : true
+        }
+
+}
