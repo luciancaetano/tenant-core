@@ -1,0 +1,8 @@
+@import "variables";
+@import "mixins";
+@import "theme";
+// Global Styles
+
+body {
+    background-color: $gray-lightest;
+}
