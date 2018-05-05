@@ -155,6 +155,11 @@ module.exports = {
               compact: true,
             },
           },
+          {
+            test: /\.(graphql|gql)$/,
+            exclude: /node_modules/,
+            loader: 'graphql-tag/loader'
+          },
           // Compile .tsx?
           {
             test: /\.(ts|tsx)$/,

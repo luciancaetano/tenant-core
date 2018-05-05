@@ -1,6 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import App from './configurestore';
+import userquery from './user.gql';
+
 // import registerServiceWorker from './registerServiceWorker';
 
 // Import Flag Icons Set
@@ -16,12 +18,3 @@ import './styles/index.css';
 
 render(<App/>, document.getElementById('root'));
 // registerServiceWorker();
-
-console.log(gql`
-{
-  user(id: 5) {
-    firstName
-    lastName
-  }
-}
-`);
