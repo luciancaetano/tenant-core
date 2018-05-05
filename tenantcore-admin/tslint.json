@@ -1,5 +1,9 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint:recommended", 
+    "tslint-react", 
+    "tslint-config-prettier"
+  ],
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
@@ -7,6 +11,8 @@
     ]
   },
   "rules": {
+    "jsx-alignment": true,
+    "jsx-wrap-multiline": true,
     "object-literal-sort-keys": false,
     "array-type": false,
     "object-literal-shorthand": false,

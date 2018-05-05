@@ -11,14 +11,14 @@ import navigation from '../app.nav';
 
 const Content = (): any => {
     return (
-    <Switch>
-            { Object.keys(Routes).map((key: string, index: number): ReactNode => {
+        <Switch>
+            {Object.keys(Routes).map((key: string, index: number): ReactNode => {
                 const route = Routes[key];
                 return <Route
                     key={index}
                     exact={route.exact}
                     path={key}
-                    render={props => <route.component {...props}/>}
+                    render={props => <route.component {...props} />}
                 />;
             })}
             <Route component={NotFoundComponent} />
@@ -28,21 +28,21 @@ const Content = (): any => {
 
 @decorate
 export class ApplicationLayout extends Component<any, any, any> {
-    constructor (props: any, ctx: any) {
+    constructor(props: any, ctx: any) {
         super(props, ctx);
         document.title = appTitle;
     }
-    get loggedIn (): boolean {
+    get loggedIn(): boolean {
         return this.props.state.session.isAuthenticated;
     }
-    public render () {
+    public render() {
         if (!this.loggedIn) {
-            return <LoginView/>;
+            return <LoginView />;
         }
         return (
             <div className="app">
-        <Content/>
-      </div>
+                <Content />
+            </div>
         );
     }
 }
