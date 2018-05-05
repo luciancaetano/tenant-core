@@ -1,0 +1,1 @@
+declare const gql:(literals: any, ...placeholders: any[]) => any;

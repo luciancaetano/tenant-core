@@ -16,3 +16,12 @@ import './styles/index.css';
 
 render(<App/>, document.getElementById('root'));
 // registerServiceWorker();
+
+console.log(gql`
+{
+  user(id: 5) {
+    firstName
+    lastName
+  }
+}
+`);
