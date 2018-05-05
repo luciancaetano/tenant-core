@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import React, { Component, ReactNode } from "react";
 import { DictionaryShape } from '../shapes/DictionaryShape';
 import getTranslationImpl from '../utils/locale_get_translation_impl';

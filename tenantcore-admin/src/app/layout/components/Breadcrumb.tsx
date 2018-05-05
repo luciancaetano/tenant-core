@@ -3,7 +3,7 @@ import { Link, Route } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import Routes from '../../app.routing';
 
-const findRouteName = (url: string): void => Routes[url] ? Routes[url].title : console.log(url);
+const findRouteName = (url: string): any => Routes[url] ? Routes[url].title : console.log(url);
 
 const getPaths = (pathname: string): any => {
     const paths = ['/'];

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import React, { Children, Component } from "react";
 import { connect } from "react-redux";
 import { DictionaryShape } from '../shapes/DictionaryShape';
