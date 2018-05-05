@@ -1,5 +1,10 @@
 'use strict';
 
+require('core-js/es6/map');
+require('core-js/es6/set');
+require('core-js/es6/promise');
+require('core-js/es6/object');
+
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
   // inconsistent state due to an error, but it gets swallowed by a Promise,
