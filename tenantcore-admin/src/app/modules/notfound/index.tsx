@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import React, { Component, ReactNode } from 'react';
 
 export class NotFoundComponent extends Component {
     public render (): ReactNode {

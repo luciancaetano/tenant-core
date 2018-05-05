@@ -6,13 +6,13 @@ export const graphQLClient = (endpoint: string, headers: {[key: string]: string}
         cache: 'no-cache',
         mode: cors ? 'cors' : 'no-cors',
         body: JSON.stringify({
-            query: query.replace(/(\s\n)/g, '')
+            query: query.replace(/(\s\n)/g, ''),
         }),
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            ...headers
-        }
+            ...headers,
+        },
     })
         .then(res => res.json())
         .then(json => json.data);
@@ -21,7 +21,7 @@ export const authenticatedGQLQuery = graphQLClient(
     process.env.NODE_ENV === 'production' ?
         graphQLUrl.production : graphQLUrl.development,
     {
-        Authorization: 'Bearer ' + localStorage.getItem('id_token')
+        Authorization: 'Bearer ' + localStorage.getItem('id_token'),
     },
     false
 );

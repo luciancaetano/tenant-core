@@ -1,10 +1,10 @@
 import jwtDecode from 'jwt-decode';
 import { Dispatch } from 'redux';
 import {restApiUrl} from '../app.config';
-import types, { IActionType } from "./types";
+import types, { IActionType } from './types';
 
 export function baseApiUrl(endpoint:string):string{
-    return `${restApiUrl.development}/${endpoint}`
+    return `${restApiUrl.development}/${endpoint}`;
 }
 
 /**
@@ -21,27 +21,27 @@ export function loginUserRestore (): any {
             if (!(date.valueOf() > new Date().valueOf())) {
                 dispatch({
                     payload: {
-                        message: 'Token Expired.'
+                        message: 'Token Expired.',
                     },
-                    type: types.LOGIN_USER_RESTORE_FAILURE
+                    type: types.LOGIN_USER_RESTORE_FAILURE,
                 });
             } else {
                 dispatch({
                     payload: {
                         info: idToken,
                         isAuthenticated: true,
-                        token: localStorage.getItem('id_token')                        
+                        token: localStorage.getItem('id_token'),
                     },
-                    type: types.LOGIN_USER_RESTORE_SUCCESS                    
+                    type: types.LOGIN_USER_RESTORE_SUCCESS,
                 });
             }
         } catch (e) {
             // dispatch(notif.notifyDanger('Token de acesso inválido.', 5000));
             dispatch({
                 payload: {
-                    message: e.message
+                    message: e.message,
                 },
-                type: types.LOGIN_USER_RESTORE_FAILURE
+                type: types.LOGIN_USER_RESTORE_FAILURE,
             });
         }
     };
@@ -57,27 +57,27 @@ export function loginUserRenew (): any {
  *
  * @param {*String} token
  */
-export function loginUserSuccess (token: string, info: any): IActionType<{token:string, info: any}> {
+export function loginUserSuccess (token: string, info: any): IActionType<{token:string; info: any}> {
     localStorage.setItem('id_token', token);
     return {
         payload: {
             info,
-            token            
+            token,
         },
-        type: types.LOGIN_USER_SUCCESS        
+        type: types.LOGIN_USER_SUCCESS,
     };
 }
 /**
  *
  */
-export function loginUserFailure (error: {response: {status: any, statusText: string}}): IActionType<any>  {
+export function loginUserFailure (error: {response: {status: any; statusText: string}}): IActionType<any>  {
     localStorage.removeItem('id_token');
     return {
         payload: {
             status: error.response.status,
-            statusText: error.response.statusText
+            statusText: error.response.statusText,
         },
-        type: types.LOGIN_USER_FAILURE
+        type: types.LOGIN_USER_FAILURE,
     };
 }
 /**
@@ -111,10 +111,10 @@ export function loginUser (email: string, password: string): any {
             cache: 'no-cache',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             method: 'POST',
-            mode: 'cors'
+            mode: 'cors',
         })
             .then((response: Response): Response => {
                 if (!response.ok) {
@@ -143,8 +143,8 @@ export function loginUser (email: string, password: string): any {
                         dispatch(loginUserFailure({
                             response: {
                                 status: 401,
-                                statusText: 'Token Expired'
-                            }
+                                statusText: 'Token Expired',
+                            },
                         }));
                     } else {
                         dispatch(loginUserSuccess(response.data, decoded));
@@ -153,8 +153,8 @@ export function loginUser (email: string, password: string): any {
                     dispatch(loginUserFailure({
                         response: {
                             status: 403,
-                            statusText: e.message
-                        }
+                            statusText: e.message,
+                        },
                     }));
                 }
             })
@@ -162,8 +162,8 @@ export function loginUser (email: string, password: string): any {
                 dispatch(loginUserFailure({
                     response: {
                         status: error.status,
-                        statusText: error.message
-                    }
+                        statusText: error.message,
+                    },
                 }));
             });
     };
@@ -177,10 +177,10 @@ export function loginRenew (): (dispatch: Dispatch<any>) => void {
             headers: {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + localStorage.getItem('id_token'),
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             method: 'POST',
-            mode: 'cors'
+            mode: 'cors',
         })
             .then((response: Response): Response => {
                 if (!response.ok) {

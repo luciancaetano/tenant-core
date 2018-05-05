@@ -1,8 +1,8 @@
 import * as immutable from 'seamless-immutable';
-import types, { IActionType } from "../actions/types";
+import types, { IActionType } from '../actions/types';
 
 const initialState = immutable({
-    count: 0
+    count: 0,
 });
 
 export function CounterReducer (state: any = initialState, action: IActionType<{count:number}>): any {

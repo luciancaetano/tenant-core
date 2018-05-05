@@ -1,5 +1,5 @@
 import decorate from '@app/app.decorators';
-import React, { Component, ReactNode } from "react";
+import React, { Component, ReactNode } from 'react';
 import { Button, Card, CardBody, CardGroup,
     Col, Container, Input, InputGroup,
     InputGroupAddon, Row } from 'reactstrap';
@@ -7,7 +7,6 @@ import { Button, Card, CardBody, CardGroup,
 @decorate
 export class LoginView extends Component<any, any, any> {
     public render () {
-        const { __ } = this.props;
         return (
             <div className="app flex-row align-items-center">
                 <Container>
@@ -17,21 +16,21 @@ export class LoginView extends Component<any, any, any> {
                                 <Card className="p-4">
                                     <CardBody>
                                         <h1>Login</h1>
-                                        <p className="text-muted">{__('sign_In_account_login_screen')}</p>
+                                        <p className="text-muted">{'sign_In_account_login_screen'}</p>
                                         <InputGroup className="mb-3">
                                             <i className="icon-user" />
-                                            <Input type="text" placeholder={__('username_field_label')}/>
+                                            <Input type="text" placeholder={'username_field_label'}/>
                                         </InputGroup>
                                         <InputGroup className="mb-4">
                                             <i className="icon-lock" />
-                                            <Input type="password" placeholder={__('password_field_label')}/>
+                                            <Input type="password" placeholder={'password_field_label'}/>
                                         </InputGroup>
                                         <Row>
                                             <Col xs="6">
-                                                <Button color="primary" className="px-4">{__('login_button_label')}</Button>
+                                                <Button color="primary" className="px-4">{'login_button_label'}</Button>
                                             </Col>
                                             <Col xs="6" className="text-right">
-                                                <Button color="link" className="px-0">{__('forgot_password_login_label')}</Button>
+                                                <Button color="link" className="px-0">{'forgot_password_login_label'}</Button>
                                             </Col>
                                         </Row>
                                     </CardBody>

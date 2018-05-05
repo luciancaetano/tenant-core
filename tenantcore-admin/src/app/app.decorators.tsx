@@ -1,7 +1,5 @@
 export { connect as connectRedux } from 'react-redux';
-export { locale } from '@luciancaetano/i18n';
 export { withRouter } from 'react-router-dom';
-import { locale } from '@luciancaetano/i18n';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Dispatch } from 'redux';
@@ -20,4 +18,4 @@ export function bindDispatch (target: any): any {
     return target;
 }
 
-export default (target: any): any => withRouter(locale(redux(target)));
+export default (target: any): any => withRouter((redux(target)));

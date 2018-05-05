@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 
 export const FontAwesome = {
     i500px: ({ className }: {className: string}): ReactNode => (<i className={`fa fa-500px ${className || ''}`}/>),
@@ -694,5 +694,5 @@ export const FontAwesome = {
     Yen: ({ className }: {className: string}): ReactNode => (<i className={`fa fa-yen ${className || ''}`}/>),
     Youtube: ({ className }: {className: string}): ReactNode => (<i className={`fa fa-youtube ${className || ''}`}/>),
     YoutubePlay: ({ className }: {className: string}): ReactNode => (<i className={`fa fa-youtube-play ${className || ''}`}/>),
-    YoutubeSquare: ({ className }: {className: string}): ReactNode => (<i className={`fa fa-youtube-square ${className || ''}`}/>)
+    YoutubeSquare: ({ className }: {className: string}): ReactNode => (<i className={`fa fa-youtube-square ${className || ''}`}/>),
 };

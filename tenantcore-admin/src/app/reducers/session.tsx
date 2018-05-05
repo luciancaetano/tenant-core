@@ -1,12 +1,12 @@
 import * as immutable from 'seamless-immutable';
-import types, { IActionType } from "../actions/types";
+import types, { IActionType } from '../actions/types';
 
 const initialState = immutable({
     isAuthenticated: false,
     isAuthenticating: false,
     isError: false,
     statusText: null,
-    token: null
+    token: null,
 });
 
 export function SessionReducer (state: any = initialState, action: IActionType<any>): any {
@@ -16,13 +16,13 @@ export function SessionReducer (state: any = initialState, action: IActionType<a
                 isAuthenticated: false,
                 isError: false,
                 statusText: '',
-                token: null
+                token: null,
             });
         case types.LOGIN_USER_REQUEST:
             return state.merge({
                 isAuthenticating: true,
                 isError: false,
-                statusText: ''
+                statusText: '',
             });
         case types.LOGIN_USER_RESTORE_FAILURE:
             return state.merge({
@@ -30,7 +30,7 @@ export function SessionReducer (state: any = initialState, action: IActionType<a
                 isAuthenticating: false,
                 isError: false,
                 statusText: action.payload.message,
-                token: null
+                token: null,
             });
         case types.LOGIN_USER_RESTORE_SUCCESS:
             return state.merge({
@@ -39,7 +39,7 @@ export function SessionReducer (state: any = initialState, action: IActionType<a
                 isAuthenticating: false,
                 isError: false,
                 statusText: '',
-                token: action.payload.token                
+                token: action.payload.token,
             });
         case types.LOGIN_USER_SUCCESS:
             return state.merge({
@@ -48,7 +48,7 @@ export function SessionReducer (state: any = initialState, action: IActionType<a
                 isAuthenticating: false,
                 isError: false,
                 statusText: '',
-                token: action.payload.token
+                token: action.payload.token,
             });
         case types.LOGIN_USER_FAILURE:
             return state.merge({
@@ -56,14 +56,14 @@ export function SessionReducer (state: any = initialState, action: IActionType<a
                 isAuthenticating: false,
                 isError: true,
                 statusText: `${action.payload.statusText}`,
-                token: null
+                token: null,
             });
         case types.LOGOUT_USER:
             return state.merge({
                 isAuthenticated: false,
                 isError: false,
                 statusText: '',
-                token: null
+                token: null,
             });
         default:
             return state;

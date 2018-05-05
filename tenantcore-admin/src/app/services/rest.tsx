@@ -27,8 +27,8 @@ export function restGet (endPoint: string, headers: any = {}): Promise<Response>
             'Authorization': 'Bearer ' + localStorage.getItem('id_token'),
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            ... headers
-        }
+            ... headers,
+        },
     });
 }
 /**
@@ -42,13 +42,13 @@ export function restPost (endPoint: string, body: any, headers: any = {}): Promi
         method: 'POST',
         cache: 'no-cache',
         mode: useCors ? 'cors' : 'no-cors',
-        body: typeof body === "string" ? body : JSON.stringify(body),
+        body: typeof body === 'string' ? body : JSON.stringify(body),
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('id_token'),
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            ... headers
-        }
+            ... headers,
+        },
     });
 }
 /**
@@ -62,13 +62,13 @@ export function restPut (endPoint: string, body: any, headers: any = {}): Promis
         method: 'PUT',
         cache: 'no-cache',
         mode: useCors ? 'cors' : 'no-cors',
-        body: typeof body === "string" ? body : JSON.stringify(body),
+        body: typeof body === 'string' ? body : JSON.stringify(body),
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('id_token'),
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            ... headers
-        }
+            ... headers,
+        },
     });
 }
 /**
@@ -85,7 +85,7 @@ export function restDelete (endPoint: string, headers: any = {}): Promise<Respon
             'Authorization': 'Bearer ' + localStorage.getItem('id_token'),
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            ... headers
-        }
+            ... headers,
+        },
     });
 }

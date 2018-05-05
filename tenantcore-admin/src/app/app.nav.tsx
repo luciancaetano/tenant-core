@@ -1,4 +1,3 @@
-import { Locale } from '@luciancaetano/i18n';
 import React, { ReactNode } from 'react';
 
 interface INavItem{
@@ -26,17 +25,17 @@ const navItens:INavItem[] = [
         icon: 'icon-speedometer',
         badge: {
             variant: 'info',
-            text: <Locale entry="new"/>
-        }
+            text: 'NOVO',
+        },
     },
     {
         title: true,
         name: 'UI elements',
         wrapper: { // optional wrapper object
             element: '', // required valid HTML5 element tag
-            attributes: {} // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
+            attributes: {}, // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
         },
-        class: '' // optional class names space delimited list for title item ex: "text-center"
+        class: '', // optional class names space delimited list for title item ex: "text-center"
     },
     {
         name: 'Components',
@@ -46,44 +45,44 @@ const navItens:INavItem[] = [
             {
                 name: 'Buttons',
                 url: '/components/buttons',
-                icon: 'icon-puzzle'
+                icon: 'icon-puzzle',
             },
             {
                 name: 'Social Buttons',
                 url: '/components/social-buttons',
-                icon: 'icon-puzzle'
+                icon: 'icon-puzzle',
             },
             {
                 name: 'Cards',
                 url: '/components/cards',
-                icon: 'icon-puzzle'
+                icon: 'icon-puzzle',
             },
             {
                 name: 'Forms',
                 url: '/components/forms',
-                icon: 'icon-puzzle'
+                icon: 'icon-puzzle',
             },
             {
                 name: 'Modals',
                 url: '/components/modals',
-                icon: 'icon-puzzle'
+                icon: 'icon-puzzle',
             },
             {
                 name: 'Switches',
                 url: '/components/switches',
-                icon: 'icon-puzzle'
+                icon: 'icon-puzzle',
             },
             {
                 name: 'Tables',
                 url: '/components/tables',
-                icon: 'icon-puzzle'
+                icon: 'icon-puzzle',
             },
             {
                 name: 'Tabs',
                 url: '/components/tabs',
-                icon: 'icon-puzzle'
-            }
-        ]
+                icon: 'icon-puzzle',
+            },
+        ],
     },
     {
         name: 'Icons',
@@ -96,15 +95,15 @@ const navItens:INavItem[] = [
                 icon: 'icon-star',
                 badge: {
                     variant: 'secondary',
-                    text: '4.7'
-                }
+                    text: '4.7',
+                },
             },
             {
                 name: 'Simple Line Icons',
                 url: '/icons/simple-line-icons',
-                icon: 'icon-star'
-            }
-        ]
+                icon: 'icon-star',
+            },
+        ],
     },
     {
         name: 'Widgets',
@@ -112,20 +111,20 @@ const navItens:INavItem[] = [
         icon: 'icon-calculator',
         badge: {
             variant: 'info',
-            text: <Locale entry="new"/>
-        }
+            text: 'NOVO',
+        },
     },
     {
         name: 'Charts',
         url: '/charts',
-        icon: 'icon-pie-chart'
+        icon: 'icon-pie-chart',
     },
     {
-        divider: true
+        divider: true,
     },
     {
         title: true,
-        name: 'Extras'
+        name: 'Extras',
     },
     {
         name: 'Pages',
@@ -135,40 +134,40 @@ const navItens:INavItem[] = [
             {
                 name: 'Login',
                 url: '/login',
-                icon: 'icon-star'
+                icon: 'icon-star',
             },
             {
                 name: 'Register',
                 url: '/register',
-                icon: 'icon-star'
+                icon: 'icon-star',
             },
             {
                 name: 'Error 404',
                 url: '/404',
-                icon: 'icon-star'
+                icon: 'icon-star',
             },
             {
                 name: 'Error 500',
                 url: '/500',
-                icon: 'icon-star'
-            }
-        ]
+                icon: 'icon-star',
+            },
+        ],
     },
     {
         name: 'Download CoreUI',
         url: 'http://coreui.io/react/',
         icon: 'icon-cloud-download',
         class: 'mt-auto',
-        variant: 'success'
+        variant: 'success',
     },
     {
         name: 'Try CoreUI PRO',
         url: 'http://coreui.io/pro/react/',
         icon: 'icon-layers',
-        variant: 'danger'
-    }
+        variant: 'danger',
+    },
 ];
 
 export default {
-    items: navItens
+    items: navItens,
 };

@@ -1,10 +1,10 @@
-import types, { IActionType } from "../actions/types";
+import types, { IActionType } from '../actions/types';
 
 declare const navigator:any;
 
 const initialState = {
     lang: navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage),
-    showMenu: false
+    showMenu: false,
 };
 
 export function LayoutReducer (state: any = initialState, action: IActionType<any> = { type: '', payload: {} }): any {
@@ -12,13 +12,13 @@ export function LayoutReducer (state: any = initialState, action: IActionType<an
         case types.LANGUAGE_TOGGLE:
             return {
                 ... state,
-                lang: action.payload
+                lang: action.payload,
             };
 
         case types.MENU_TOGL:
             return {
                 ...state,
-                showMenu: !state.showMenu
+                showMenu: !state.showMenu,
             };
         default:
             return state;

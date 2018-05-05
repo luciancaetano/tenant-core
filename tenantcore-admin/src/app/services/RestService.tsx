@@ -38,7 +38,7 @@ export function apiCreate (resource: any, model: any, dispatch: any = null, head
  */
 export function apiGet (resource: string, id: number, dispatch: ReduxDispatchFnType, headers: any = {}): Promise<Response> {
     return new Promise((resolve: (res: any)=>any, reject: (res: any)=>any) => {
-        restGet(resource + '/' + id, headers)
+        restGet(`${resource}\${id}`, headers)
             .then((response: Response) => {
                 if (response.status === 401) {
                     if (dispatch) {
@@ -67,7 +67,7 @@ export function apiGet (resource: string, id: number, dispatch: ReduxDispatchFnT
  */
 export function apiUpdate (resource: string, model: any, id: number, dispatch: ReduxDispatchFnType, headers: any = {}): Promise<Response> {
     return new Promise((resolve: (res: any)=>any, reject: (res: any)=>any) => {
-        restPut(resource + '/' + id, model, headers)
+        restPut(`${resource}\${id}`, model, headers)
             .then((response: Response) => {
                 if (response.status === 401) {
                     if (dispatch) {
@@ -92,7 +92,7 @@ export function apiUpdate (resource: string, model: any, id: number, dispatch: R
  */
 export function apiDelete (resource: string, id: number, dispatch: ReduxDispatchFnType, headers: any = {}): Promise<Response> {
     return new Promise((resolve: (res: any)=>any, reject: (res: any)=>any) => {
-        restDelete(resource + '/' + id, headers)
+        restDelete(`${resource}\${id}`, headers)
             .then((response: Response) => {
                 if (response.status === 401) {
                     if (dispatch) {
@@ -134,10 +134,10 @@ export function apiGetAll (resource: string, options: IRestPaginationOptions, di
             page: options.page,
             perPage: options.perPage,
             orderBy: options.orderBy,
-            orderDir: options.orderDir === 1 ? '1' : '-1'
+            orderDir: options.orderDir === 1 ? '1' : '-1',
         });
 
-        restGet(resource + '?' + dataUrl, headers)
+        restGet(`${resource}?${dataUrl}`, headers)
             .then((response: Response) => {
                 if (response.status === 401) {
                     if (dispatch) {
@@ -177,6 +177,6 @@ export function createServiceFor (ResourceName: string): IBaseRestService {
         read: (id: number, dispatch: ReduxDispatchFnType, headers: any): Promise<any> => apiGet(ResourceName, id, dispatch, headers),
         update: (model: any, id: number, dispatch: ReduxDispatchFnType, headers: any): Promise<any> => apiUpdate(ResourceName, model, id, dispatch, headers),
         delete: (id: number, dispatch: ReduxDispatchFnType, headers: any): Promise<any> => apiDelete(ResourceName, id, dispatch, headers),
-        getAll: (options: IRestPaginationOptions, dispatch: ReduxDispatchFnType, headers: any): Promise<any> => apiGetAll(ResourceName, options, dispatch, headers)
+        getAll: (options: IRestPaginationOptions, dispatch: ReduxDispatchFnType, headers: any): Promise<any> => apiGetAll(ResourceName, options, dispatch, headers),
     };
 }
