@@ -1,52 +1,49 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "build/dist",
-    "module": "esnext",
-    "target": "es5",
-    "lib": [
-      "es5",
-      "es6",
-      "dom",
-      "es2015.core",
-      "es2015.collection",
-      "es2015.generator",
-      "es2015.iterable",
-      "es2015.promise",
-      "es2015.proxy",
-      "es2015.reflect",
-      "es2015.symbol",
-      "es2015.symbol.wellknown",
-      "esnext.asynciterable"
-    ],
-    "sourceMap": true,
-    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "target": "es6",
+    "module": "esnext",
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noImplicitAny": false,
-    "allowSyntheticDefaultImports": true,
-    "strictNullChecks": false,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "lib": [
+      "es2015",
+      "es2016",
+      "dom",
+      "esnext.asynciterable"
+    ],
     "baseUrl": ".",
     "paths": {
-        "@app/*": ["./src/app/*"],
-        "@media/*": ["./src/media/*"],
-        "i18n/*": ["./src/i18n/*"],
-        "@luciancaetano/*": ["./src/@luciancaetano/*"]
-    }
+      "@app/*": ["src/app/*"],
+      "@types": ["src/app/types/index"],
+      "@redux.types": ["src/app/types/redux/index"],
+      "@redux.actions/*": ["src/app/actions/*"],
+      "@redux.actiontypes": ["src/app/actions/index"],
+      "@redux.reducers": ["src/app/reducers/index"],
+      "@app.lib": ["src/app/lib/index"],
+      "@app.config": ["src/app/app.config"],
+      "@app.modules": ["src/app/app.modules"],
+      "@app.routing": ["src/app/app.routing"],
+      "@services.rest": ["src/app/services/rest/index"],
+      "@socket": ["src/app/socket/index"],
+      "@services.graphql": ["src/app/services/graphql/index"],
+      "@components": ["src/app/components/index"],
+      "@media/*": ["src/media/*"],
+      "@styles/*": ["src/styles/*"]
+    },
+    "types": [
+      "node"
+    ]
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
-  ]
+  "awesomeTypescriptLoaderOptions":{
+    "useCache": true
+  }
 }

@@ -1,25 +1,17 @@
-import types, { IActionType } from '../actions/types';
+import { ActionTypes } from "@app/actions";
+import { IAction } from "@redux.types";
+import immutable from "seamless-immutable";
 
-declare const navigator:any;
+const initialState = immutable({
+    drawerOpen: false,
+});
 
-const initialState = {
-    lang: navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage),
-    showMenu: false,
-};
-
-export function LayoutReducer (state: any = initialState, action: IActionType<any> = { type: '', payload: {} }): any {
+export function LayoutReducer(state = initialState, action: IAction<any> = {}) {
     switch (action.type) {
-        case types.LANGUAGE_TOGGLE:
-            return {
-                ... state,
-                lang: action.payload,
-            };
-
-        case types.MENU_TOGL:
-            return {
-                ...state,
-                showMenu: !state.showMenu,
-            };
+        case ActionTypes.DRAWER_OPEN:
+            return state.set("drawerOpen", true);
+        case ActionTypes.DRAWER_CLOSE:
+            return state.set("drawerOpen", false);
         default:
             return state;
     }

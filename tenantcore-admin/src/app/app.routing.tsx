@@ -1,10 +1,7 @@
-import React from 'react';
-import * as Modules from './modules';
+import { IRouterConfig } from "@app/types";
 
-export default {
-    '/': {
-        component: Modules.HomeView,
-        exact: true,
-        title: 'Dashboard',
-    },
+const Routes: IRouterConfig = {
+
 };
+
+export default Routes;

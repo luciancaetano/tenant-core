@@ -1,20 +1,15 @@
-import React from 'react';
-import {render} from 'react-dom';
-import App from './configurestore';
-import userquery from './user.gql';
+/// <reference path='./index.d.ts'/>
+import React from "react";
+import ReactDOM from "react-dom";
+import ApplicationEntry from "./configurestore";
 
-// import registerServiceWorker from './registerServiceWorker';
+// Import Global Styles
+import "antd/dist/antd.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "typeface-roboto";
+import "./styles/index.scss";
 
-// Import Flag Icons Set
-import 'flag-icon-css/css/flag-icon.min.css';
-// Import Font Awesome Icons Set
-import 'font-awesome/css/font-awesome.min.css';
-// Import Simple Line Icons Set
-import 'simple-line-icons/css/simple-line-icons.css';
-// Import Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
-// Import Main styles for this application
-import './styles/index.css';
-
-render(<App/>, document.getElementById('root'));
-// registerServiceWorker();
+ReactDOM.render(
+  <ApplicationEntry/>,
+  document.getElementById("root") as HTMLElement,
+);
